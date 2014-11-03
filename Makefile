@@ -1,4 +1,6 @@
 
+RSYNC_LOCATION=hanula.com:/var/www/resume/
+
 .PHONY: html clean
 
 all: clean html
@@ -12,4 +14,4 @@ clean:
 
 
 publish:
-	rsync -aAXv build/ hanula.com:/var/www/resume/
+	rsync -aAXv build/ ${RSYNC_LOCATION}
