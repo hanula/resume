@@ -1,0 +1,4 @@
+Jinja2==2.7.3
+Markdown==2.5.1
+MarkupSafe==0.23
+PyYAML==3.11

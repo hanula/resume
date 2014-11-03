@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+env/
+build/
+*.sublime-project
+*.sublime-workspace

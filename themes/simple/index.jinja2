@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ profile.name }} - Resume</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+
+h3 {
+  margin-top: 0.5em;
+}
+h4 {
+  margin-top: 1.1em;
+}
+.footer,
+section {
+    border-top: 1px solid #eee;
+    padding: 1em 0;
+}
+section p {
+    margin: 0.8em 0 0.4em 0;
+}
+section p.sticky {
+    margin: 0;
+}
+
+section ul {
+    margin-top: 1em;
+}
+
+img.photo {
+    width: 100px;
+    height: auto;
+    margin: 20px 0;
+}
+.contacts dt { width: 60px; text-align: left }
+.contacts dd { margin-left: 65px; }
+
+.item {
+    border-bottom: 1px solid #eee;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+header.main h3 {
+  margin-top: 0.3em;
+}
+
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <header class="main row">
+        <div class="header">
+            <div class="col-md-6 col-sm-12">
+                <h1>{{ profile.name }}</h1>
+                <h3>{{ profile.label }}</h3>
+            </div>
+
+
+            <div class="col-md-6 col-sm-12">
+                <img class="photo img-responsive img-circle pull-right"
+                    src="{{ profile.image }}">
+            </div>
+        </div>
+
+        <div class="">
+            <div class="col-md-6 col-sm-12">
+            <dl class="contacts dl-horizontal">
+
+                <dt>Address:</dt>
+                <dd>{{ profile.address }}</dd>
+
+                <dt>Phone:</dt>
+                <dd>{{ profile.phone }}</dd>
+
+                <dt>Email:</dt>
+                <dd>
+                    <a href="mailto:{{ profile.email }}">
+                        {{ profile.email }}
+                    </a>
+                </dd>
+
+                <dt>Website:</dt>
+                <dd>
+                  <a href="{{ profile.website }}">
+                      {{ profile.website }}
+                    </a>
+                </dd>
+
+            </dl>
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+                <ul class="networks list-inline pull-right">
+                {% for network in profile.networks %}
+                    <li>
+                        <a href="{{ network.url }}">
+                            {{ network.username }} @ {{ network.provider }}
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+      </header>
+
+      <section class="row">
+        <header class="col-md-3">
+          <h3>About</h3>
+        </header>
+        <div class="col-md-9">
+            <h3></h3>
+            {{ h.md(profile.summary) }}
+        </div>
+      </section>
+
+
+      {% if skills %}
+      <section class="row skills">
+        <header class="col-md-3">
+          <h3>Skills</h3>
+        </header>
+        <div class="col-md-9">
+          <div class="row skills">
+
+              {% for area in skills %}
+              <div class="col-md-6">
+                <h4>{{ area.area }}</h4>
+                <ul>
+                  {% for skill in area.skills %}
+                  <li>{{ skill }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+              {% endfor %}
+
+          </div>
+        </div>
+      </section>
+      {% endif %}
+
+
+      {% if work %}
+      <section class="row">
+        <header class="col-md-3">
+          <h3>{{ labels.work or 'Work Experience' }}</h3>
+        </header>
+        <div class="col-md-9">
+            {% for exp in work %}
+          <div class="item">
+            <h3>{{ exp.company }}</h3>
+            <strong>{{ exp.role }}</strong>
+
+            {% if exp.date %}
+                <p class="sticky">{{ exp.date }}</p>
+            {% endif %}
+
+            {% if exp.website %}
+                <p class="sticky">
+                    <a href="{{ exp.website }}">{{ exp.website }}</a>
+                </p>
+            {% endif %}
+
+            {% if exp.summary %}
+                <p>{{ exp.summary }}</p>
+            {% endif %}
+
+            {% if exp.highlights %}
+            <ul>
+                {% for line in exp.highlights %}
+                <li>{{ h.md(line) }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+
+      {% if projects %}
+      <section class="row">
+        <header class="col-md-3">
+          <h3>{{ labels.projects or 'Projects' }}</h3>
+        </header>
+        <div class="col-md-9">
+            {% for project in projects %}
+          <div class="item">
+            <h3>{{ project.name }}</h3>
+
+            {% if project.role %}
+                <strong>{{ project.role }}</strong><br />
+            {% endif %}
+
+            {% if project.date %}
+            <p class="sticky">{{ project.date }}</p>
+            {% endif %}
+
+            {% if project.website %}
+                <p class="sticky">
+                    <a href="{{ project.website }}">{{ project.website }}</a>
+                </p>
+            {% endif %}
+            <p>{{ project.summary }}</p>
+
+            {% if project.highlights %}
+            <ul>
+                {% for line in project.highlights %}
+                <li>{{ h.md(line) }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      {% if education %}
+      <section class="row">
+        <header class="col-md-3">
+          <h3>Education</h3>
+        </header>
+        <div class="col-md-9">
+
+            {% for edu in education %}
+          <div class="">
+            <h3>{{ edu.location }}</h3>
+            <p class="sticky">{{ edu.date }}</p>
+            <p>{{ edu.summary }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+      {% endif %}
+
+      {% if interests %}
+      <section class="row">
+        <header class="col-md-3">
+          <h3>Interests</h3>
+        </header>
+        <div class="col-md-9">
+
+        <ul>
+          {% for interest in interests %}
+          <li>{{ interest }}</li>
+          {% endfor %}
+        </ul>
+        </div>
+      </section>
+      {% endif %}
+
+
+      <div class="footer ">
+        <p class="pull-right">
+          &copy; 2014 {{ profile.name }} |
+          <a href="#" onclick="javascript:window.print(); return false">Print</a> |
+          <a href="#">Top</a>
+        </p>
+        <p>
+          See on <a href="{{ config.github_source }}">github</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</body>
+</html>
