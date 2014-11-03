@@ -9,3 +9,7 @@ html:
 
 clean:
 	@rm -rf ./html
+
+
+publish:
+	rsync -aAXv build/ hanula.com:/var/www/resume/
