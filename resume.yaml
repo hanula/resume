@@ -24,6 +24,13 @@ profile:
             username: hanula
             url: https://github.com/hanula
 
+        -   provider: linkedin
+            username: sebastianhanula
+            url: https://www.linkedin.com/in/sebastianhanula
+
+        -   provider: google+
+            username: SebastianHanula
+            url: https://plus.google.com/+SebastianHanula
 
 skills:
     -   area: Programming
