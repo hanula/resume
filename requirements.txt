@@ -1,4 +1,15 @@
+CairoSVG==1.0.9
 Jinja2==2.7.3
 Markdown==2.5.1
 MarkupSafe==0.23
 PyYAML==3.11
+Pyphen==0.9.1
+WeasyPrint==0.23
+cairocffi==0.6
+cffi==0.8.6
+cssselect==0.9.1
+html5lib==0.999
+lxml==3.4.0
+pycparser==2.10
+six==1.8.0
+tinycss==0.3

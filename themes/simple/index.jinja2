@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ profile.name }} - Resume</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-
 <style>
 
 h3 {
@@ -265,6 +264,7 @@ header.main h3 {
       <div class="footer ">
         <p class="pull-right">
           &copy; 2014 {{ profile.name }} |
+          <a href="{{ config.pdf_file }}">Download PDF</a> |
           <a href="#" onclick="javascript:window.print(); return false">Print</a> |
           <a href="#">Top</a>
         </p>

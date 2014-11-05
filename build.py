@@ -1,5 +1,6 @@
 
 import os
+import sys
 import yaml
 import shutil
 import jinja2
@@ -58,7 +59,7 @@ def build(data, config, output_dir):
     vars['config'] = config
     vars['h'] = helpers  # make helpers module accessible via 'h' shortcut.
 
-    theme_location = 'themes/{}'.format(theme_name)
+    theme_location = os.path.join('themes', theme_name)
 
     clean(output_dir)
     copy_static_data(theme_location, output_dir)
@@ -75,12 +76,35 @@ def build(data, config, output_dir):
             f.write(html)
 
 
-def main():
-    data = read_yaml('resume.yaml')
-    config = read_yaml('config.yaml')
+def make_html(config, data):
     output_dir = config.get('output_dir', 'build')
     build(data, config, output_dir)
 
+
+def make_pdf(config, data):
+    from weasyprint import HTML
+    output_dir = config.get('output_dir', 'build')
+    output_file = os.path.join(output_dir,
+                               config.get('pdf_file', 'resume.pdf'))
+
+    input_file = os.path.join(output_dir, 'index.html')
+    theme_location = os.path.join('themes', config['theme'])
+
+    html = HTML(input_file, base_url=theme_location)
+    html.write_pdf(output_file)
+
+
+def main(args=sys.argv):
+    if len(args) > 1:
+        cmd = args[1]
+    else:
+        cmd = 'html'
+
+    config = read_yaml('config.yaml')
+    data = read_yaml('resume.yaml')
+
+    cmds = {'html': make_html, 'pdf': make_pdf}
+    return cmds[cmd](config, data)
 
 if __name__ == '__main__':
     main()

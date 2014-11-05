@@ -1,13 +1,16 @@
 
 RSYNC_LOCATION=hanula.com:/var/www/resume/
 
-.PHONY: html clean
+.PHONY: clean html pdf publish
 
-all: clean html
+all: clean html pdf
 
 html:
 	python build.py
 	@echo "Done"
+
+pdf:
+	python build.py pdf
 
 clean:
 	@rm -rf ./html
