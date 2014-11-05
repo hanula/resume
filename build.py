@@ -77,11 +77,17 @@ def build(data, config, output_dir):
 
 
 def make_html(config, data):
+    """
+    Generate static html build of the resume given by input `data`.
+    """
     output_dir = config.get('output_dir', 'build')
     build(data, config, output_dir)
 
 
 def make_pdf(config, data):
+    """
+    Generate PDF file out of generated 'index.html' page.
+    """
     from weasyprint import HTML
     output_dir = config.get('output_dir', 'build')
     output_file = os.path.join(output_dir,
@@ -95,6 +101,10 @@ def make_pdf(config, data):
 
 
 def main(args=sys.argv):
+    """
+    Entry function for the script to handle command arguments
+    and run appropriate build like 'html' and 'pdf'.
+    """
     if len(args) > 1:
         cmd = args[1]
     else:
