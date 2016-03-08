@@ -48,10 +48,14 @@ To publish html on your server via SSH, edit `RSYNC_LOCATION` in `Makefile` and 
 
     make publish
 
-
+Examples
+--------
+* [simple](http://resume.hanula.com/)
+* [compact](http://jmbeach.github.io/resume/)
 
 Customizing
 -----------
+This repo contains a simple and a compact theme.
 
 Add your own theme by creating `themes/<your-theme>` folder with `index.jinja2` template file.
 Every other (non-jinja2) file from theme directory will be copied to final `build/` destination.
