@@ -203,7 +203,7 @@ th {
     text-decoration: underline;
   }
   a[href]:after {
-    content: none !important
+    content: " (" attr(href) ")";
   }
   abbr[title]:after {
     content: " (" attr(title) ")";
@@ -228,26 +228,11 @@ th {
   img {
     max-width: 100% !important;
   }
-  img {
-    display: none;
-  }
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
-  }
-  body,p,li,dd,dt {
-    font-size:10px;
-  }
-  .h3,h3 {
-    font-size: 13px;
-  }
-  h2 {
-    font-size:15px;
-  }
-  h1 {
-    font-size:20px;
   }
   h2,
   h3 {
@@ -274,19 +259,6 @@ th {
   .table-bordered td {
     border: 1px solid #ddd !important;
   }
-  .footer {
-    display:none;
-  }
-  section.projects .item {
-    border:none;
-  }
-  /*.contact-container {
-    float:right;
-    margin:0 auto;
-  }*/
-  /*.contacts {
-    margin:0;
-  }*/
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
@@ -1111,7 +1083,7 @@ html {
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
@@ -1293,7 +1265,7 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 20px;
+  font-size: 36px;
 }
 h2,
 .h2 {
@@ -1301,7 +1273,7 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 15px;
+  font-size: 24px;
 }
 h4,
 .h4 {
