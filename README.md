@@ -1,10 +1,12 @@
 resume
 ======
 
-My resume with static html generator.
+Python resume generator. From YAML to PDF and static HTML.
 
-You can see how it looks at [resume.hanula.com](http://resume.hanula.com).
-
+Example Themes
+--------------
+* [simple](http://resume.hanula.com/)
+* [compact](http://jmbeach.github.io/resume/)
 
 Installing
 ----------
@@ -47,11 +49,7 @@ PDF file name in `build` directory is defined by `pdf_file` in `config.yaml`.
 To publish html on your server via SSH, edit `RSYNC_LOCATION` in `Makefile` and run:
 
     make publish
-
-Examples
---------
-* [simple](http://resume.hanula.com/)
-* [compact](http://jmbeach.github.io/resume/)
+    
 
 Customizing
 -----------
