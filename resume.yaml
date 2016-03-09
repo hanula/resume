@@ -46,7 +46,7 @@ work:
         highlights:
             - Re-designed slab inspection web page to communicate with third-party tracking system, Rollcim and improved logging.
             - Created cost model website for estimating and reporting prime tons and yield by product type.
-            - Major participation in planning for and installing cost model system (particularly for caster data).
+            - Major participation in planning for and installing Danielli Q3 Intelligence system (particularly for caster data).
     # -   company: Skypark Agency
     #     role: Social Media Manager Intern
     #     date: 2010 - 2012
@@ -64,7 +64,7 @@ projects:
         website: http://robotradio.herokuapp.com/
         github: https://github.com/jmbeach/soundcloud-radio
         date: 09.2015
-        summary: Allows you to stream your likes from sound cloud intermingled with other artists.
+        summary: Allows you to stream your likes from SoundCloud intermingled with other artists.
         highlights:
             - Added SoundCloud login to pull from likes
             - Added Three.js album art viewer
@@ -86,9 +86,9 @@ education:
     -   location: University of Alabama, Tuscaloosa, AL
         date: 2012 - Present
         summary: Computer Science
+        gpa: 2.8
         highlights:
           - Undergraduate research for Dr. Jeff Gray. Created virtual theremin using Leap Motion controller and Unity 3D to demonstrate Leap's potential in music education.
           - Worked in Lego Robotics Outreach program with Dr. Jeff Gray. Introducted young students to basic programming concepts.
           - Earned Webucator's Computer Science Scholarship for 2015-16 year.
           - Earned Nucor Corporation University Collegiate Scholarship for 2015-16 year.
-          - Graduating December 2016

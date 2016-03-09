@@ -4,6 +4,10 @@
   /*margin-bottom:-2em*/
 }
 
+section.projects .item {
+  border:none;
+}
+
 @media print {
   .networks {
     display:none;
