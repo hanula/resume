@@ -92,3 +92,9 @@ education:
           - Worked in Lego Robotics Outreach program with Dr. Jeff Gray. Introducted young students to basic programming concepts.
           - Earned Webucator's Computer Science Scholarship for 2015-16 year.
           - Earned Nucor Corporation University Collegiate Scholarship for 2015-16 year.
+
+config:
+    theme: compact
+    github_source: https://github.com/jmbeach/resume
+    pdf_file: Jared Michael Beach - Resume.pdf
+    year: 2016

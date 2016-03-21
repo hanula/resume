@@ -23,16 +23,15 @@ This script requires `Python 3` and a set of libraries with their dependencies:
     Jinja2
     Markdown
     WeasyPrint
+    docopt
 
 Usage
 -----
 
-Update `resume.yaml` with your details and run:
+1. Look at resume examples in the `resumes` folder and create your own.
+2. Copy `config.make.example` to `config.make` and update it with your settings.
+3. Run `make` to build HTML and PDF files that will go to the `build` directory.
 
-    make
-    open build/index.html
-
-Which will generate static HTML in `build` directory, containing `index.html` page with theme assets and generated pdf file.
 
 ### PDF generator
 
@@ -41,15 +40,15 @@ To just create PDF file:
 
     make pdf
 
-PDF file name in `build` directory is defined by `pdf_file` in `config.yaml`.
+PDF file name in `build` directory is defined by `pdf_file` property in the `config` section of your resume `yaml` file.
 
 
 ### Publishing
 
-To publish html on your server via SSH, edit `RSYNC_LOCATION` in `Makefile` and run:
+To publish html on your server via SSH, edit `RSYNC_LOCATION` in `config.make` and run:
 
     make publish
-    
+
 
 Customizing
 -----------
@@ -58,7 +57,7 @@ This repo contains a simple and a compact theme.
 Add your own theme by creating `themes/<your-theme>` folder with `index.jinja2` template file.
 Every other (non-jinja2) file from theme directory will be copied to final `build/` destination.
 
-You can control which theme is used by setting `theme` property in `config.yaml` file.
+You can control which theme is used by setting `theme` property in the resume's `config` section.
 
 
 License
