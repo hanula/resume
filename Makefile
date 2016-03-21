@@ -6,11 +6,11 @@ RSYNC_LOCATION=hanula.com:/var/www/resume/
 all: clean html pdf
 
 html:
-	python build.py
+	python3 build.py
 	@echo "Done"
 
 pdf:
-	python build.py pdf
+	python3 build.py pdf
 
 clean:
 	@rm -rf ./html

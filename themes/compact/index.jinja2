@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ profile.name }} - Resume</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
   <style>
     h3 {
       margin-top: 0.5em;
@@ -63,51 +64,52 @@
   </style>
 </head>
 
+
 <body>
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <header class="main row">
           <div class="header">
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <h1>{{ profile.name }}</h1>
               <h3>{{ profile.label }}</h3>
             </div>
 
+            <div class="contact-container col-md-6 col-sm-6 col-xs-6">
+              <dl class="contacts">
+                <div>
+                <span>Address:</span>
+                <span>{{ profile.addressLine1 }} | </span>
+                <span>{{ profile.addressLine2 }} |</span>
+                <span>{{ profile.addressLine3 }}</span>
+                </div>
 
-            <div class="col-md-6 col-sm-12">
-              <img class="photo img-responsive img-circle pull-right" src="{{ profile.image }}">
-            </div>
-          </div>
+                <div>
 
-          <div class="">
-            <div class="col-md-6 col-sm-12">
-              <dl class="contacts dl-horizontal">
-
-                <dt>Address:</dt>
-                <dd>{{ profile.address }}</dd>
-
-                <dt>Phone:</dt>
-                <dd>{{ profile.phone }}</dd>
-
-                <dt>Email:</dt>
-                <dd>
+                <span>Phone:</span>
+                <span>{{ profile.phone }}</span>
+                </div>
+                <div>
+                <span>Email:</span>
+                <span>
                   <a href="mailto:{{ profile.email }}">
                         {{ profile.email }}
                     </a>
-                </dd>
+                </span>
+                </div>
 
-                <dt>Website:</dt>
+                <!-- <dt>Website:</dt>
                 <dd>
                   <a href="{{ profile.website }}">
                       {{ profile.website }}
                     </a>
-                </dd>
+                </dd> -->
 
               </dl>
             </div>
 
-            <div class="col-md-6 col-sm-12">
+            <div class="col-md-6 col-sm-6 col-xs-offset-6 col-xs-6 networks-container">
               <ul class="networks list-inline text-right">
                 {% for network in profile.networks %}
                 <li>
@@ -119,18 +121,23 @@
               </ul>
             </div>
           </div>
+
+
         </header>
 
-        {% if summary %}
+        {% if profile.objective %}
         <section class="row">
           <header class="col-md-3">
-            <h3>About</h3>
+            <h3>Objective</h3>
           </header>
           <div class="col-md-9">
-            <h3></h3> {{ h.md(profile.summary) }}
+            <h3></h3> {{ h.md(profile.objective) }}
           </div>
         </section>
-        {% endif %} {% if skills %}
+        {% endif %}
+
+
+        {% if skills %}
         <section class="row skills">
           <header class="col-md-3">
             <h3>Skills</h3>
@@ -163,6 +170,8 @@
               <h3>{{ exp.company }}</h3>
               <strong>{{ exp.role }}</strong> {% if exp.date %}
               <p class="sticky">{{ exp.date }}</p>
+              {% endif %} {% if exp.location %}
+              <p class="sticky">{{ exp.location }}</p>
               {% endif %} {% if exp.website %}
               <p class="sticky">
                 <a href="{{ exp.website }}">{{ exp.website }}</a>
@@ -181,17 +190,21 @@
           </div>
         </section>
         {% endif %} {% if projects %}
-        <section class="row">
+        <section class="row projects">
           <header class="col-md-3">
             <h3>{{ labels.projects or 'Projects' }}</h3>
           </header>
           <div class="col-md-9">
             {% for project in projects %}
-            <div class="item">
+            <div class="item col-md-9 col-xs-6">
               <h3>{{ project.name }}</h3> {% if project.role %}
               <strong>{{ project.role }}</strong>
               <br /> {% endif %} {% if project.date %}
               <p class="sticky">{{ project.date }}</p>
+              {% endif %} {% if project.github %}
+              <p class="sticky">
+                <a href="{{ project.github }}">{{ project.github }}</a>
+              </p>
               {% endif %} {% if project.website %}
               <p class="sticky">
                 <a href="{{ project.website }}">{{ project.website }}</a>
@@ -221,7 +234,15 @@
             <div class="">
               <h3>{{ edu.location }}</h3>
               <p class="sticky">{{ edu.date }}</p>
+              <p class="sticky">GPA: {{edu.gpa}} </p>
               <p>{{ edu.summary }}</p>
+              {% if edu.highlights %}
+              <ul>
+                {% for line in edu.highlights %}
+                <li>{{ h.md(line) }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
             </div>
             {% endfor %}
           </div>
@@ -245,7 +266,7 @@
 
         <div class="footer ">
           <p class="pull-right">
-            &copy; {{ config.year }} {{ profile.name }} |
+            &copy; {{config.year}} {{ profile.name }} |
             <a href="{{ config.pdf_file }}">Download PDF</a> |
             <a href="#" onclick="javascript:window.print(); return false">Print</a> |
             <a href="#">Top</a>

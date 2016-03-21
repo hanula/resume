@@ -90,12 +90,9 @@ def make_pdf(config, data):
     """
     from weasyprint import HTML
     output_dir = config.get('output_dir', 'build')
-    output_file = os.path.join(output_dir,
-                               config.get('pdf_file', 'resume.pdf'))
-
+    output_file = os.path.join(output_dir, config.get('pdf_file', 'resume.pdf'))
     input_file = os.path.join(output_dir, 'index.html')
     theme_location = os.path.join('themes', config['theme'])
-
     html = HTML(input_file, base_url=theme_location)
     html.write_pdf(output_file)
 
