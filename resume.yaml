@@ -6,10 +6,9 @@ profile:
     label: Software engineer
     email: jaredbeachdesign@gmail.com
     phone: +1 (205) 886-0005
-    birth: 05-23-1994
-    addressLine1: 711 11th St.
-    addressLine2: Hunt House Appts. #G
-    addressLine3: Tuscaloosa, AL 35401
+    addressLine1: 1454 Snow Hinton Dr.
+    # addressLine2: Hunt House Appts. #G
+    addressLine2: Tuscaloosa, AL 35405
     # objective: >
     #   Using my love of technology to make better software and interfaces to simplify the lives of others.
 
@@ -34,19 +33,21 @@ work:
         role: Level II Technician Intern
         location: Convent, LA
         date: July 2015 - Present
-        summary: On-site and remote work aiming to introduce a higher level of automation to their process.
+        summary: 
         highlights:
+            - Provided on-site and remote work in order to introduce a higher level of automation to their process.
             - Implemented delay tracking by polling PLC for delay status (was manually enterred into spreadsheet). Replicated web interface from Tuscaloosa plant.
             - Created web interface for viewing and recording truck weights as they enter and exit plant site. Replaced access database and manual entry of weights.
     -   company: Nucor Steel Tuscaloosa, Inc.
         role: Level II Technician Intern
         date: May 2013 - March 2016
         location: Tuscaloosa, AL
-        summary: "Created software and automation solutions for capturing and retrieving data for the steelmaking process (focusing primarily on the caster area)."
+        summary: 
         highlights:
+            - Created software and automation solutions for capturing and retrieving data for the steelmaking process (focusing primarily on the caster area).
             - Re-designed slab inspection web page to communicate with third-party tracking system, Rollcim and improved logging.
             - Created cost model website for estimating and reporting prime tons and yield by product type.
-            - Major participation in planning for and installing Danielli Q3 Intelligence system (particularly for caster data).
+            - Participated in planning for and installing Danielli Q3 Intelligence system (particularly involved with caster data).
     # -   company: Skypark Agency
     #     role: Social Media Manager Intern
     #     date: 2010 - 2012
@@ -64,8 +65,9 @@ projects:
         website: http://robotradio.herokuapp.com/
         github: https://github.com/jmbeach/soundcloud-radio
         date: 09.2015
-        summary: Allows you to stream your likes from SoundCloud intermingled with other artists.
+        summary: 
         highlights:
+            - Allows users to stream their preferences from SoundCloud intermingled with other artists.
             - Added SoundCloud login to pull from likes
             - Added Three.js album art viewer
             - Node.js / Express
@@ -75,20 +77,21 @@ projects:
         github: https://github.com/jmbeach/TumblrSlideShow
         website: http://tumblrslideshow.herokuapp.com/login
         date: 05.2014
-        summary: Lets you view your Tumblr dashboard as a slideshow
+        summary: 
         highlights:
+            - Lets users view their Tumblr dashboard as a slideshow
             - Tumblr login system
             - Like, re-blog, unsubscribe, and subscribe users
             - Background mimics picture's dominant color
             - Node.js / Express
 
 education:
-    -   location: University of Alabama, Tuscaloosa, AL
-        date: 2012 - Present
-        summary: Computer Science
-        gpa: 2.8
+    -   location: The University of Alabama, Tuscaloosa, AL
+        date: Dec 2016 
+        summary: Bachelor of Science in Computer Science
+        gpa: 2.8 / 4.0
         highlights:
-          - Undergraduate research for Dr. Jeff Gray. Created virtual theremin using Leap Motion controller and Unity 3D to demonstrate Leap's potential in music education.
-          - Worked in Lego Robotics Outreach program with Dr. Jeff Gray. Introducted young students to basic programming concepts.
-          - Earned Webucator's Computer Science Scholarship for 2015-16 year.
-          - Earned Nucor Corporation University Collegiate Scholarship for 2015-16 year.
+          - Researched Leap Motion controller's practical applications. Created virtual theremin  in Unity 3D to demonstrate the controller's potential in music education.
+          - Worked in Lego Robotics Outreach program. Introducted young students to basic programming concepts.
+          - Earned Webucator's Computer Science Scholarship for 2015-2016 year.
+          - Earned Nucor Corporation University Collegiate Scholarship for 2015-2016 year.

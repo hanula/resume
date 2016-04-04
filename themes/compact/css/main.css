@@ -1,5 +1,5 @@
 .contacts {
-  margin-top:2em;
+  margin-top:1em;
   float:right;
   /*margin-bottom:-2em*/
 }
@@ -64,16 +64,16 @@ section.projects .item {
     widows: 3;
   }
   body,p,li,dd,dt {
-    font-size:10px;
+    font-size:11pt;
   }
   .h3,h3 {
-    font-size: 13px;
+    font-size: 14pt;
   }
   h2 {
-    font-size:15px;
+    font-size:16pt;
   }
   h1 {
-    font-size:20px;
+    font-size:16pt;
   }
   h2,
   h3 {
@@ -118,11 +118,14 @@ section.projects .item {
   }*/
 }
 body {
-  font-size: 10px;
+  font-size: 11pt;
+  font-family: Times, "Times New Roman", Georgia, serif
 }
 h1, .h1 {
-  font-size: 20px;
+  font-size: 16pt;
+  font-family: Times, "Times New Roman", Georgia, serif
 }
 h3, .h3 {
-  font-size: 15px;
+  font-size: 14pt;
+  font-family: Times, "Times New Roman", Georgia, serif
 }
