@@ -46,7 +46,7 @@ skills:
     -   area: Languages
         skills:
             - English, Fluent
-			- Elvish
+            - Elvish
 
 work:
     -   company: Sally's Hacking Company
@@ -90,4 +90,4 @@ interests:
 config:
     theme: simple
     github_source: https://github.com/hanula/resume
-    p
+    pdf_file: Sally_P_Hacker.pdf
