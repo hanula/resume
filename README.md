@@ -15,6 +15,10 @@ Installing
     cd resume
     pip install -r requirements.txt
 
+or instead of `pip install`
+
+		npm run all
+
 ### Requirements
 
 This script requires `Python 3` and a set of libraries with their dependencies:

@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-	"gulp": "gulp",
+	"all": "npm install && gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
