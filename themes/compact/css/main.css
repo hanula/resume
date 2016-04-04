@@ -9,6 +9,7 @@ section.projects .item {
 }
 
 @media print {
+
   .networks {
     display:none;
   }

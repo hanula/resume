@@ -15,6 +15,7 @@ BUILD ?= $(PYTHON) build.py $(BUILD_ARGS)
 
 .PHONY: clean html pdf publish
 
+
 all: clean html pdf
 
 html:

@@ -1,6 +1,11 @@
 
 # Example resume
 
+config:
+    theme: compact
+    github_source: https://github.com/jmbeach/resume
+    pdf_file: Jared_Beach_Resume.pdf
+
 profile:
     name: Jared Michael Beach
     label: Software engineer
