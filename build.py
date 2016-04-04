@@ -69,7 +69,6 @@ def build(data, config, output_dir):
     vars['config'] = config
     vars['h'] = helpers  # make helpers module accessible via 'h' shortcut.
 
-    print(theme_name)
     theme_location = os.path.join('themes', theme_name)
 
     clean(output_dir)
