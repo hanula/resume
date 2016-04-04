@@ -1,4 +1,4 @@
-resume
+resume [![Build Status](https://travis-ci.org/jmbeach/resume.svg?branch=master)](https://travis-ci.org/jmbeach/resume)
 ======
 
 Python resume generator. From YAML to PDF and static HTML.
