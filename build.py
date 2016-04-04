@@ -1,10 +1,20 @@
+"""
+Simple HTML and PDF resume generator from structurized YAML files.
+
+Usage:
+    build.py [-o=<DIR>] [-f=<FORMAT>] [-t=<THEME>] <resume_file>
+
+Options:
+    -o=<DIR>, --output_dir=<DIR>     Output directory for the build files. [default: build].
+    -f=<FORMAT>, --format=<FORMAT>   Format of the build [default: html].
+    -t=<NAME>, --theme=<NAME>        Name of the theme to use.
+"""
 
 import os
-import sys
 import yaml
 import shutil
+import docopt
 import jinja2
-import markdown
 import helpers
 
 
@@ -97,21 +107,24 @@ def make_pdf(config, data):
     html.write_pdf(output_file)
 
 
-def main(args=sys.argv):
+def main():
     """
     Entry function for the script to handle command arguments
     and run appropriate build like 'html' and 'pdf'.
     """
-    if len(args) > 1:
-        cmd = args[1]
-    else:
-        cmd = 'html'
+    args = docopt.docopt(__doc__)
+    output_format = args['--format']
 
-    config = read_yaml('config.yaml')
-    data = read_yaml('resume.yaml')
+    # read resume data and config with some defaults
+    resume_data = read_yaml(args['<resume_file>'])
+    config = resume_data.get('config', {})
+    config.setdefault('output_dir', args['--output_dir'])
+    config['theme'] = args['--theme'] or config.get('theme')
+    config.setdefault('theme', 'simple')
 
+    # build based on the given format
     cmds = {'html': make_html, 'pdf': make_pdf}
-    return cmds[cmd](config, data)
+    return cmds[output_format](config, resume_data)
 
 if __name__ == '__main__':
     main()

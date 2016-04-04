@@ -5,3 +5,4 @@ build/
 *.sublime-project
 *.sublime-workspace
 bower_components/
+config.make

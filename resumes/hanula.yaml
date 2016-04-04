@@ -1,0 +1,209 @@
+
+# Example resume
+
+profile:
+    name: Sebastian Hanula
+    label: Software engineer
+    email: sebastian.hanula@gmail.com
+    phone: +48 693 320 358
+    birth: 10-02-1983
+    address: Myślenice, Poland
+    summary: >
+        Software engineer focused on performant web systems. Skilled Python programmer.
+        More than 10 years of professional web development.
+
+    image: "https://avatars2.githubusercontent.com/u/446998?v=2&s=460"
+    website: http://www.hanula.com
+
+    networks:
+        -   provider: twitter
+            username: hanula
+            url: https://twitter.com/hanula
+
+        -   provider: github
+            username: hanula
+            url: https://github.com/hanula
+
+        -   provider: linkedin
+            username: sebastianhanula
+            url: https://www.linkedin.com/in/sebastianhanula
+
+        -   provider: google+
+            username: SebastianHanula
+            url: https://plus.google.com/+SebastianHanula
+
+skills:
+    -   area: Programming
+        skills:
+            - Python, +10 years
+            - Javascript, +14 years
+            - CSS/HTML/HTML5, +15 years
+            - C/C++, intermediate, +8 years
+            - Bash, intermediate, +5 years,
+            - Go, novice, +2 years
+            - Rust, novice, +1 year
+            - PHP, not used anymore
+
+    -   area: Technology
+        skills:
+            - Git, Mercurial, Bazaar
+            - PostgreSQL
+            - MySQL
+            - Cassandra
+            - ElasticSearch
+            - Redis
+            - Memcached
+            - MongoDB
+            - Docker
+
+    -   area: Languages
+        skills:
+            - Polish, Mother tongue
+            - English, Fluent
+            - German, Basic
+
+work:
+    -   company: Thingr
+        role: Founder and developer
+        website: https://thingr.com
+        date: 2014 - Present
+        summary: Knowledge management, discovery and collaboration service. Startup project.
+        highlights:
+            - Frontend and backend development.
+            - >
+                [SOA](https://en.wikipedia.org/wiki/Service-oriented_architecture)
+                architecture. [Dockerized](https://docker.com/) containers.
+            - REST API server, distributed task queueing, web content extraction and analysis.
+            - >
+                Python's [Pyramid web framework](http://www.pylonsproject.org/)
+                and  SQLAlchemy ORM framework.
+
+    -   company: Simbin AB
+        role: Senior Python Backend Programmer
+        date: 2012 - 2014
+        website: http://game.raceroom.com/
+        highlights:
+            - >
+                Developed Cassandra-based systems: generic content metadata,
+                user activity feeds,
+            - ElasticSearch-based content search.
+            - >
+                Designed and developed game content permission system for users
+                to buy, lend, and try content from the store. Dynamic permissions
+                based on time, availability nad user properties like location,
+                owned content and role groups.
+            - >
+                Custom Go-based statistics server which aggregates context based
+                game activities and achivements.
+            - Introduced better quality with strong TDD, continous integration and
+                development focus.
+            - Major role in design process of game features and services.
+
+    -   company: Gemilo OY
+        role: Python Web Developer
+        date: 2008 - 2012
+        website: http://www.gemilo.com
+        summary: >
+            Front and back-end developement of large,
+            multipurpose collaboration SaaS platform.
+        highlights:
+            - >
+                Design and development on major system components:
+                permission system, caching framework, comments and blogging systems.
+            - >
+                Development of in-house tools for Scrum management, server monitoring,
+                Database migrations and more.
+
+            - Pylons web framework / PostgreSQL / Javascript.
+            - Strong TDD approach.
+
+    -   company: Youplanet
+        role: Javascript frontend developer
+        summary: Contracting job to help build a traveling site.
+        date: 2008
+        highlights:
+            - Javascript tools and components.
+            - Google maps integration.
+            - Usability advisor.
+
+    -   company: i123.pl
+        role: Founder, Python Developer
+        website: http://i123.pl
+        date: 2006 - 2009
+        summary: >
+            Multiple service-oriented tools and a community portal.
+            (video bookmarking, rss reader, TODO app, meta search engine).
+        highlights:
+            - First big python project.
+            - www.i123.pl - Meta search engine, aggregating and prioritizing
+                polish content from Google, Yahoo, MSN Search and polish search engines.
+            - rss.i123.pl - Personalized RSS feed reader.
+            - video.i123.pl - Personalized video aggregator. Users could upload
+                own videos or use services like Youtube, Google Video, Vimeo,
+                Metacafe (and others) to keep and share their videos.
+            - tudu.i123.pl - Javascript TODO app.
+
+
+    -   company: Stbit
+        role: Founder, Python/PHP developer
+        date: 2004 - 2006
+        summary: Consulting and web development agency.
+        highlights:
+            - Plan, design and develop PHP software.
+            - Web security consulting.
+
+
+
+projects:
+
+    -   name: BetaFrontpage
+        role: Frontend and backend developer
+        website: http://www.betafrontpage.com
+        date: 08.2014
+        summary: BetaFrontpage lists startups frontpages. Full screenshots for
+            inspiration and product discovery.
+        highlights:
+            - "[Pyramid web framework](http://www.pylonsproject.org/)."
+            - "[Docker](https://docker.com/) for screenshot grabbing service."
+
+    -   name: Wwwino.pl
+        role: Developed web spider and search engine. Frontend and backend developement.
+
+        website: http://wwwino.pl
+        date: 2014 - Present
+        summary: Wine search engine and price comparator for Polish wine consumers.
+        highlights:
+            - "[Pyramid web framework](http://www.pylonsproject.org/)."
+            - ElasticSearch.
+            - Web scrapping.
+
+    -   name: Piwwwo.pl
+        role: Frontend and backend developer
+        website: http://piwwwo.pl
+        date: 08-2014
+        summary: Piwwwo.pl is a beer journal and brewery database.
+        highlights:
+            - "[Pyramid web framework](http://www.pylonsproject.org/)."
+            - SQLAlchemy ORM framework.
+            - PostgreSQL database.
+
+
+education:
+    -   location: AGH University of Science and Technology, Kraków, Poland
+        date: 2002 - 2011
+        summary: Computer Science
+
+
+interests:
+    - General Computer Science
+    - Web scalability and performance
+    - Science
+    - Astronomy
+    - Motorsport
+    - Football
+
+
+config:
+    theme: simple
+    github_source: https://github.com/hanula/resume
+    pdf_file: Sebastian_Hanula_Resume.pdf
