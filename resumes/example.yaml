@@ -8,9 +8,7 @@ profile:
     phone: +1 222 333 4444
     birth: 03-14-1592
     address: Somewheresville
-    summary: >
-		Just your typical hacker
-
+    summary: Just your typical hacker
     image: "../example_files/Sally.png"
     website: http://www.sallyphacker.com
 
