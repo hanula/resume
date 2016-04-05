@@ -30,3 +30,6 @@ clean:
 
 publish:
 	$(RSYNC) -$(RSYNC_ARGS) $(BUILD_DIR) $(RSYNC_LOCATION)
+
+reload: clean html 
+	chrome-cli reload

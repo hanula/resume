@@ -4,7 +4,7 @@
 config:
     theme: compact
     github_source: https://github.com/jmbeach/resume
-    pdf_file: Jared_Beach_Resume.pdf
+    pdf_file: Jared-Beach-Resume.pdf
 
 profile:
     name: Jared Michael Beach
@@ -41,7 +41,7 @@ work:
         summary: 
         highlights:
             - Provided on-site and remote work in order to introduce a higher level of automation to their process.
-            - Implemented delay tracking by polling PLC for delay status (was manually enterred into spreadsheet). Replicated web interface from Tuscaloosa plant.
+            - Implemented delay tracking by polling PLC for delay status (was manually entered into spreadsheet). Replicated web interface from Tuscaloosa plant.
             - Created web interface for viewing and recording truck weights as they enter and exit plant site. Replaced access database and manual entry of weights.
     -   company: Nucor Steel Tuscaloosa, Inc.
         role: Level II Technician Intern
@@ -97,6 +97,33 @@ education:
         gpa: 2.8 / 4.0
         highlights:
           - Researched Leap Motion controller's practical applications. Created virtual theremin  in Unity 3D to demonstrate the controller's potential in music education.
-          - Worked in Lego Robotics Outreach program. Introducted young students to basic programming concepts.
+          - Worked in Lego Robotics Outreach program. Introduced young students to basic programming concepts.
           - Earned Webucator's Computer Science Scholarship for 2015-2016 year.
           - Earned Nucor Corporation University Collegiate Scholarship for 2015-2016 year.
+
+references:
+    -   name: J.T. Thomas
+        occupation: Level 2 Supervisor / Mechanical Lead
+        company: Nucor Steel Tuscaloosa, Inc.
+        location: Tuscaloosa, Alabama
+        email: johnhthomas@usa.net
+        detail: J.T. was my supervisor during my Co-op at Nucor for two years and can verify the quality of my character and my technical ability with respect to the projects he trusted me with while supervising me.
+
+    -   name: Phil Baker
+        occupation: Melting & Casting Supervisor
+        company: Nucor Steel Tuscaloosa, Inc.
+        location: Tuscaloosa, Alabama
+        email: phil.baker@nucor.com
+        detail: As a Co-op at Nucor, my area of focus was the caster where I worked on many projects for Mr. Baker who can attest to my initiative to help find and implement unique solutions to problems.
+
+    -   name: Dr. Jeff Gray
+        occupation: Computer Science Professor
+        company: University of Alabama
+        location: Tuscaloosa, AL
+        email: gray@cs.ua.edu
+        detail: I had the privilege of having Dr. Gray as an instructor and working with him on undergraduate research and with the Lego Robotics Outreach program and he is able to confirm the quality of my work ethic and my technical ability.
+
+    # -   name: Brian Walker
+    #     name: Dan Dickinson
+    #     name: Daniel Yu
+    #     name: Michael Gordan

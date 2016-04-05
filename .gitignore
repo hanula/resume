@@ -6,6 +6,7 @@ build/
 *.sublime-workspace
 bower_components/
 config.make
+resumes/jmbeach.yaml
 
 # Created by https://www.gitignore.io/api/node
 
