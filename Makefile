@@ -26,7 +26,7 @@ pdf:
 	$(BUILD) --format pdf $(RESUME)
 
 clean:
-	@rm -rf ./html
+	@rm -rf ./build
 
 publish:
 	$(RSYNC) -$(RSYNC_ARGS) $(BUILD_DIR) $(RSYNC_LOCATION)

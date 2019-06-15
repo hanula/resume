@@ -8,6 +8,10 @@
   <title>{{ profile.name }} - Resume</title>
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <style>
+    body {
+      font-family: "Source Sans Pro";
+    }
+
     h3 {
       margin-top: 0.5em;
     }
@@ -121,7 +125,7 @@
           </div>
         </header>
 
-        {% if summary %}
+        {% if profile.summary %}
         <section class="row">
           <header class="col-md-3">
             <h3>About</h3>
