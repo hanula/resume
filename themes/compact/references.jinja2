@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ profile.name }} - References</title>
+  <link href="css/bootstrap.css" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
+  <style>
+    h3 {
+      margin-top: 0.5em;
+    }
+    
+    h4 {
+      margin-top: 1.1em;
+    }
+    
+    .footer,
+    section {
+      border-top: 1px solid #eee;
+      padding: 1em 0;
+    }
+    
+    section p {
+      margin: 0.8em 0 0.4em 0;
+    }
+    
+    section p.sticky {
+      margin: 0;
+    }
+    
+    section ul {
+      margin-top: 1em;
+    }
+    
+    img.photo {
+      width: 100px;
+      height: auto;
+      margin: 20px 0;
+    }
+    
+    .contacts dt {
+      width: 60px;
+      text-align: left
+    }
+    
+    .contacts dd {
+      margin-left: 65px;
+    }
+    
+    .item {
+      border-bottom: 1px solid #eee;
+    }
+    
+    .item:last-child {
+      border-bottom: none;
+    }
+    
+    header.main h3 {
+      margin-top: 0.3em;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <header class="main row">
+          <div class="header">
+            <div class="col-md-5 col-sm-5 col-xs-5">
+              <h1>{{ profile.name }}</h1>
+              <h3>{{ profile.label }}</h3>
+            </div>
+
+            <div class="contact-container col-md-7 col-sm-7 col-xs-7">
+              <dl class="contacts">
+                <div>
+                  <span>Address:</span>
+                  <span>{{ profile.addressLine1 }} | </span>
+                  <span>{{ profile.addressLine2 }} </span>
+                  <!-- <span style="">{{ profile.addressLine3 }}</span> -->
+                </div>
+
+                <div>
+
+                  <span>Phone:</span>
+                  <span>{{ profile.phone }}</span>
+                </div>
+                <div>
+                  <span>Email:</span>
+                  <span>
+                  <a href="mailto:{{ profile.email }}">
+                        {{ profile.email }}
+                    </a>
+                </span>
+                </div>
+
+                <!-- <dt>Website:</dt>
+                <dd>
+                  <a href="{{ profile.website }}">
+                      {{ profile.website }}
+                    </a>
+                </dd> -->
+
+              </dl>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-offset-6 col-xs-6 networks-container">
+              <ul class="networks list-inline text-right">
+                {% for network in profile.networks %}
+                <li>
+                  <a href="{{ network.url }}">
+                            {{ network.username }} @ {{ network.provider }}
+                        </a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        {% if references %}
+        <section class="row">
+          <header class="col-md-3">
+            <h3>References</h3>
+          </header>
+          <div class="col-md-9">
+            {% for exp in references %}
+            <div class="item">
+              <h3>{{ exp.name }}</h3> {% if exp.occupation %}
+              <p class="sticky">{{ exp.occupation }}</p>
+              {% endif %} {% if exp.company %}
+              <p class="sticky"> {{ exp.company }} </p>
+              {% endif %} {% if exp.location %}
+              <p class="sticky">{{ exp.location }}</p>
+              {% endif %} 
+							{% if exp.work_phone %}
+              <p class="sticky">Work: {{ exp.work_phone }}</p>
+              {% endif %} 
+							{% if exp.cell %}
+              <p class="sticky">Cell: {{ exp.cell }}</p>
+              {% endif %} 
+							{% if exp.email %}
+              <p class="sticky">{{ exp.email }}</p>
+              {% endif %} 
+							{% if exp.detail %}
+							<p style="padding:2em;padding-top:1em;padding-bottom:1em;">{{exp.detail}}</p>
+							{% endif %}
+            </div>
+            {% endfor %}
+          </div>
+        </section>
+        {% endif %}
+        <div class="footer ">
+          <p class="pull-right">
+            &copy; {{config.year}} {{ profile.name }} |
+            <a href="{{ config.pdf_file }}">Download PDF</a> |
+            <a href="#" onclick="javascript:window.print(); return false">Print</a> |
+            <a href="#">Top</a>
+          </p>
+          <p>
+            Source on <a href="{{ config.github_source }}">github</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+</body>
+
+</html>
+

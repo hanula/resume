@@ -1,0 +1,93 @@
+
+# Example resume
+
+profile:
+    name: Sally Hacker
+    label: Software engineer
+    email: sally.hacker@hackers.com
+    phone: +1 222 333 4444
+    birth: 03-14-1592
+    address: Somewheresville
+    summary: Just your typical hacker
+    image: "../example_files/Sally.png"
+    website: http://www.sallyphacker.com
+
+    networks:
+        -   provider: twitter
+            username: sallyphacker
+            url: https://twitter.com/sallyphacker
+
+        -   provider: github
+            username: sallyphacker
+            url: https://github.com/sallyphacker
+
+        -   provider: linkedin
+            username: sallyphacker
+            url: https://www.linkedin.com/in/sallyphacker
+
+        -   provider: google+
+            username: SallyPHacker
+            url: https://plus.google.com/+SallyPHacker
+
+skills:
+    -   area: Programming
+        skills:
+            - Cobalt, +100 years
+            - 4Tran, +1000 years
+            - CSS/HTML/HTML5, +1 years
+            - C/C++, intermediate, +10 years
+
+    -   area: Technology
+        skills:
+            - Git
+            - Bower
+            - Etc
+
+    -   area: Languages
+        skills:
+            - English, Fluent
+            - Elvish
+
+work:
+    -   company: Sally's Hacking Company
+        role: Hacker and Founder
+        website: https://sallyphacker.com
+        date: 1850 - Present
+        summary: I hack stuff
+        highlights:
+            - Hacked a thing
+            - >
+                Hacked some other thing
+
+    -   company: Another Company
+        role: Lorem Ipsum
+        date: 2012 - 2014
+        website: http://loremipsum.com
+        highlights:
+            - I jumped over a lazy dog
+
+projects:
+
+    -   name: Example Project
+        role: I wrote some code
+        website: http://www.sallyphacker.com
+        date: 01.2010
+        summary: Project that codes itself
+        highlights:
+            - "Made some code"
+
+ducation:
+    -   location: Univerity of Hackers
+        date: 2000 - 2004
+        summary: Computer Science
+
+
+interests:
+    - General Computer Science
+    - Hacking
+
+
+config:
+    theme: simple
+    github_source: https://github.com/hanula/resume
+    pdf_file: Sally_P_Hacker.pdf

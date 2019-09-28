@@ -15,6 +15,7 @@ BUILD ?= $(PYTHON) build.py $(BUILD_ARGS)
 
 .PHONY: clean html pdf publish
 
+
 all: clean html pdf
 
 html:
@@ -29,3 +30,6 @@ clean:
 
 publish:
 	$(RSYNC) -$(RSYNC_ARGS) $(BUILD_DIR) $(RSYNC_LOCATION)
+
+reload: clean html 
+	chrome-cli reload

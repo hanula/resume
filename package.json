@@ -1,0 +1,26 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "resume ======",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-install": "^0.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+	"all": "npm install && gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanula/resume.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hanula/resume/issues"
+  },
+  "homepage": "https://github.com/hanula/resume#readme"
+}

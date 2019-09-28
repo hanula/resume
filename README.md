@@ -1,4 +1,4 @@
-resume
+resume [![Build Status](https://travis-ci.org/jmbeach/resume.svg?branch=master)](https://travis-ci.org/jmbeach/resume)
 ======
 
 Python resume generator. From YAML to PDF and static HTML.
@@ -14,6 +14,10 @@ Installing
     git clone https://github.com/hanula/resume
     cd resume
     pip install -r requirements.txt
+
+or instead of `pip install`
+
+		npm run all
 
 ### Requirements
 
