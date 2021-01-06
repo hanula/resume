@@ -1,5 +1,5 @@
 cairocffi==0.6
-CairoSVG==1.0.9
+CairoSVG==2.5.1
 cffi==0.8.6
 cssselect==0.9.1
 docopt==0.6.2
