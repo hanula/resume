@@ -4,7 +4,7 @@ cffi==0.8.6
 cssselect==0.9.1
 docopt==0.6.2
 html5lib==0.999
-Jinja2==2.7.3
+Jinja2==2.11.3
 lxml==3.4.0
 Markdown==2.5.1
 MarkupSafe==0.23
