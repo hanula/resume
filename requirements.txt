@@ -10,7 +10,7 @@ Markdown==2.5.1
 MarkupSafe==0.23
 pycparser==2.10
 Pyphen==0.9.1
-PyYAML==3.11
+PyYAML==5.4
 six==1.8.0
 tinycss==0.3
 WeasyPrint==0.23
