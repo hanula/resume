@@ -11,8 +11,11 @@ Options:
 """
 
 import os
-import yaml
+from typing import TypedDict
+
 import shutil
+from weasyprint import HTML
+import yaml
 import docopt
 import jinja2
 import helpers
@@ -20,36 +23,37 @@ import helpers
 
 # Template defaults
 defaults = {
-    'labels': None,
+    "labels": None,
 }
 
 
-def read_yaml(filename):
+def read_yaml(filename: str) -> TypedDict:
     """
     Read Yaml file given by ``filename`` and return dictionary data.
     """
-    with open(filename, 'rt') as f:
-        return yaml.load(f)
+    with open(filename, "rt", encoding="utf-8") as file:
+        return yaml.load(file, Loader=yaml.FullLoader)
 
 
-def render_template(tpl, vars):
+def render_template(tpl, variables):
     """
-    Render template file with ``vars`` arguments.
+    Render template file with ``variables`` arguments.
     """
-    with open(tpl, 'rt') as f:
-        tpl = jinja2.Template(f.read())
+    with open(tpl, "rt", encoding="utf-8") as file:
+        tpl = jinja2.Template(file.read())
 
-    return tpl.render(**vars)
+    return tpl.render(**variables)
 
 
 def copy_static_data(theme_dir, output_dir):
     """
     Copy contents of theme directory skipping all jinja template files.
     """
-    def ignored_files(src, names):
-        return [name for name in names if name.endswith('.jinja2')]
-
-    shutil.copytree(theme_dir, output_dir, ignore=ignored_files)
+    shutil.copytree(
+        theme_dir,
+        output_dir,
+        ignore=lambda src, names: [name for name in names if name.endswith(".jinja2")],
+    )
 
 
 def clean(output_dir):
@@ -59,50 +63,49 @@ def clean(output_dir):
     shutil.rmtree(output_dir, ignore_errors=True)
 
 
-def build(data, config, output_dir):
+def build(data, config: TypedDict, output_dir):
     """
     Build the final directory, rendering all templates and copying source files
     """
-    theme_name = config.get('theme', 'simple')
-    vars = defaults.copy()
-    vars.update(data)
-    vars['config'] = config
-    vars['h'] = helpers  # make helpers module accessible via 'h' shortcut.
+    theme_name = config.get("theme", "simple")
+    variables = defaults.copy()
+    variables.update(data)
+    variables["config"] = config
+    variables["h"] = helpers  # make helpers module accessible via 'h' shortcut.
 
-    theme_location = os.path.join('themes', theme_name)
+    theme_location = os.path.join("themes", theme_name)
 
     clean(output_dir)
     copy_static_data(theme_location, output_dir)
 
     for filename in os.listdir(theme_location):
-        if not filename.endswith('.jinja2'):
+        if filename != "index.jinja2":
             continue
 
-        html = render_template(os.path.join(theme_location, filename),
-                               vars)
+        html = render_template(os.path.join(theme_location, filename), variables)
 
-        rendered_file = filename.replace('.jinja2', '.html')
-        with open(os.path.join(output_dir, rendered_file), 'wt') as f:
-            f.write(html)
+        rendered_file = filename.replace(".jinja2", ".html")
+        with open(os.path.join(output_dir, rendered_file), "wt", encoding="utf-8") as file:
+            file.write(html)
 
 
-def make_html(config, data):
+def make_html(config: TypedDict, data):
     """
     Generate static html build of the resume given by input `data`.
     """
-    output_dir = config.get('output_dir', 'build')
+    output_dir = config.get("output_dir", "build")
     build(data, config, output_dir)
 
 
-def make_pdf(config, data):
+def make_pdf(config: TypedDict):
     """
     Generate PDF file out of generated 'index.html' page.
     """
-    from weasyprint import HTML
-    output_dir = config.get('output_dir', 'build')
-    output_file = os.path.join(output_dir, config.get('pdf_file', 'resume.pdf'))
-    input_file = os.path.join(output_dir, 'index.html')
-    theme_location = os.path.join('themes', config['theme'])
+    output_dir = config.get("output_dir", "build")
+    pdf_output_dir = "./pdf"
+    output_file = os.path.join(pdf_output_dir, config.get("pdf_file", "resume.pdf"))
+    input_file = os.path.join(output_dir, "index.html")
+    theme_location = os.path.join("themes", config["theme"])
     html = HTML(input_file, base_url=theme_location)
     html.write_pdf(output_file)
 
@@ -113,18 +116,21 @@ def main():
     and run appropriate build like 'html' and 'pdf'.
     """
     args = docopt.docopt(__doc__)
-    output_format = args['--format']
+    output_format = args["--format"]
 
     # read resume data and config with some defaults
-    resume_data = read_yaml(args['<resume_file>'])
-    config = resume_data.get('config', {})
-    config.setdefault('output_dir', args['--output_dir'])
-    config['theme'] = args['--theme'] or config.get('theme')
-    config.setdefault('theme', 'simple')
+    resume_data = read_yaml(args["<resume_file>"])
+    config = resume_data.get("config", {})
+    config.setdefault("output_dir", args["--output_dir"])
+    config["theme"] = args["--theme"] or config.get("theme")
+    config.setdefault("theme", "simple")
 
     # build based on the given format
-    cmds = {'html': make_html, 'pdf': make_pdf}
-    return cmds[output_format](config, resume_data)
+    if output_format == "html":
+        make_html(config, resume_data)
+    else:
+        make_pdf(config)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

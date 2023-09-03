@@ -1,9 +1,0 @@
-
-# Your resume file
-RESUME ?= resumes/example.yaml
-
-# Your rsync upload path
-RSYNC_LOCATION ?= example.com:/var/www/resume/
-
-# Here you can also override other variables from Makefile, like BUILD_DIR
-# BUILD_DIR ?= /tmp/my_resume_build
