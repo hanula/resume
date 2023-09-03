@@ -111,6 +111,9 @@ def make_pdf(config: TypedDict):
 
 
 def make_both(config: TypedDict, data):
+    """
+    Both HTML and PDF for a single file.
+    """
     make_html(config, data)
     make_pdf(config)
 
