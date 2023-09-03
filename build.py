@@ -110,6 +110,11 @@ def make_pdf(config: TypedDict):
     html.write_pdf(output_file)
 
 
+def make_both(config: TypedDict, data):
+    make_html(config, data)
+    make_pdf(config)
+
+
 def main():
     """
     Entry function for the script to handle command arguments
@@ -126,9 +131,14 @@ def main():
     config.setdefault("theme", "simple")
 
     # build based on the given format
-    if output_format == "html":
+    # cmds = {'html': make_html, 'pdf': make_pdf}
+    # return cmds[output_format](config, resume_data)
+
+    if output_format == "both":
+        make_both(config, resume_data)
+    elif output_format == "html":
         make_html(config, resume_data)
-    else:
+    elif output_format == "pdf":
         make_pdf(config)
 
 
